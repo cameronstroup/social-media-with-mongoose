@@ -18,11 +18,17 @@ const usernameSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  size: {
-    type: String,
-    default: "Large",
+  thoughts: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Thought",
+    },
+  ],
+
+  toJSON: {
+    getters: true,
+    virtuals: true,
   },
-  toppings: [],
 });
 
 const User = model("User", usernameSchema);
