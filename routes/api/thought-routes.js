@@ -8,7 +8,6 @@ const {
   addReaction,
   deleteReaction,
 } = require("../../controllers/thought-controller");
-const { route } = require("./user-routes");
 
 router.route("/").get(getAllThoughts);
 

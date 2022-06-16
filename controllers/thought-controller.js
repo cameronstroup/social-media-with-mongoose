@@ -4,11 +4,11 @@ const thoughtController = {
   //get all thoughts
   getAllThoughts(req, res) {
     Thought.find({})
-      .populate({
-        path: "user",
-        select: "-__v",
-      })
-      .select("-__v")
+      // .populate({
+      //   path: "User",
+      //   select: "-__v",
+      // })
+      // .select("-__v")
       .sort({ _id: -1 })
       .then((dbThoughtData) => res.json(dbThoughtData))
       .catch((err) => {
@@ -17,15 +17,17 @@ const thoughtController = {
       });
   },
   //get one thought by ID
-  getThoughtById({ params }, res) {
-    Thought.findOne({ _id: params.id })
-      .populate({
-        path: "user",
-        select: "-__v",
+  getThoughtById(req, res) {
+    Thought.findOne({ _id: req.params.thoughtId })
+      // .populate({
+      //   path: "User",
+      //   select: "-__v",
+      // })
+      // .select("-__v")
+      // .sort({ _id: -1 })
+      .then((dbThoughtData) => {
+        res.json(dbThoughtData), console.log(req.params);
       })
-      .select("-__v")
-      .sort({ _id: -1 })
-      .then((dbThoughtData) => res.json(dbThoughtData))
       .catch((err) => {
         console.log(err);
         res.status(500).json(err);
