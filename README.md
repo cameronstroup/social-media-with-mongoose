@@ -17,7 +17,7 @@ To run this code, simply clone the code, open the cloned code in your favorite I
 
 ## Picture 
 
-
+![image](https://user-images.githubusercontent.com/90347622/175085526-e26d0221-43e5-43a7-947f-dcb1d06c0ddd.png)
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
